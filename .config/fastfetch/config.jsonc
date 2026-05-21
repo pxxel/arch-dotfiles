@@ -1,0 +1,52 @@
+{
+	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+	"logo": {
+		"source": "/home/andrew/st-andrew.png",
+		"type": "kitty-direct",
+		"width": 35,
+		"height": 30,
+		"padding": {
+			"left": 1,
+			"right": 2
+		}
+	},
+
+	"display": {
+   		 "color": {
+     		 "keys": "38:5:153",
+		 "title": "38:5:189"
+   		 }
+ 	 },
+	"modules": [
+		{ "type": "break"},
+		{ "type": "custom", "format": "{#1;38:5:217}\"Then Peter remembered the word of the Lord,"},
+		{ "type": "custom", "format": "{#1;38:5:223}how He had said to him, Before the rooster" },
+		{ "type": "custom", "format": "{#1;38:5:224}crows, you will deny Me three times." },
+		{ "type": "custom", "format": "{#1;38:5:225}So Peter went out and wept bitterly.\"" },
+		{ "type": "custom", "format": "       (Luke 22:61-2)" },
+		{ "type": "break"},
+		{ "type": "separator" },
+		{ "type": "title"},
+		{ "type": "break"},
+		{ "type": "host" },
+		{ "type": "os", "key": "OS" },
+		{ "type": "kernel", "key": "Kernel" },
+		{ "type": "bios", "key": "Boot Loader" },
+		{ "type": "bootmgr", "key": "Boot Manager"},
+		{ "type": "cpu", "key": "CPU" },
+		{ "type": "gpu", "key": "GPU", "format": "AMD {name~21,46}"},
+		{ "type": "disk", "key": "Disk" },
+		{ "type": "packages", "key": "Packages" },
+		{ "type": "display", "key": "Display", "format": "{name} - {width}x{height} @ {refresh-rate}Hz"	},
+		{ "type": "bluetooth", "key": "Bluetooth" },
+		{ "type": "break"},
+		{ "type": "wifi", "key": "WiFi", "format": "{ssid} - {protocol}" },
+		{ "type": "poweradapter", "key": "Power Adatper" },
+		{ "type": "battery", "key": "Battery" },
+		{ "type": "cpuusage", "key": "CPU Usage" },
+		{ "type": "memory", "key": "Memory" },
+		{ "type": "uptime", "key": "Uptime" },
+		{ "type": "shell", "key": "Shell"}
+	]
+}
+

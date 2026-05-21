@@ -1,0 +1,32 @@
+// -*- mode: jsonc -*-
+{
+	"layer": "top",
+
+	"modules-left": ["hyprland/workspaces", "hyprland/window"],
+	"modules-center": ["clock", "custom/uptime"],
+	"modules-right": ["network", "battery"],
+	"hyprland/window": {
+		"max-length": 50
+	},
+	"battery": {
+		"format": "{capacity}% {icon}",
+		"format-icons": [" ", "", " ", " ", " "],
+		"format-charging": "{capacity}% "
+	},
+	"clock": {
+		"timezone": "America/Los_Angeles",
+		"format": "{:%I:%M:%S %p}",
+		"format-alt": "{:%a, %b %d  %I:%M:%S %p}",
+		"interval": 1
+	},
+	"custom/uptime": {
+		"exec": "uptime -p | sed 's/up //'",
+		"interval": 60,
+		"format": " Uptime: {}"
+	},
+	"network": {
+		"format-wifi": "{essid} ({signalStrength}%) ",
+		"format-disconnected": "Disconnected",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+	}
+}
