@@ -1,8 +1,8 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Monospace;
+    font-family: Monospace, "JetBrains Mono Nerd Font Propo";
     font-weight: bold;
-    font-size: 13px;
+    font-size: 11px;
 }
 
 window#waybar {
@@ -64,13 +64,14 @@ button:hover {
     background: rgba(0, 0, 0, 0.2);
 }
 
-#workspaces button.focused, #workspaces button.active {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
+}
+
+#workspaces button.focused, #workspaces button.active {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
 }
 
 #mode {
@@ -95,7 +96,7 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
+    padding: 0 3px;
     color: #ffffff;
 }
 

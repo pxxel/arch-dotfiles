@@ -1,0 +1,8 @@
+#cff4fb : cool off-white
+#9beaf2 : light teal
+#94bdf2 : sky blue
+#101e69 : phthalo blue
+#060b26 : dark navy
+#070213 : midnight
+
+

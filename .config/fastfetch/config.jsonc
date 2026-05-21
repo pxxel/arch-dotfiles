@@ -13,16 +13,16 @@
 
 	"display": {
    		 "color": {
-     		 "keys": "38:5:153",
-		 "title": "38:5:189"
+			 "keys": "#94bdf2",
+			 "title": "#9beaf2"
    		 }
  	 },
 	"modules": [
 		{ "type": "break"},
-		{ "type": "custom", "format": "{#1;38:5:217}\"Then Peter remembered the word of the Lord,"},
-		{ "type": "custom", "format": "{#1;38:5:223}how He had said to him, Before the rooster" },
-		{ "type": "custom", "format": "{#1;38:5:224}crows, you will deny Me three times." },
-		{ "type": "custom", "format": "{#1;38:5:225}So Peter went out and wept bitterly.\"" },
+		{ "type": "custom", "format": "{#1}\"Then Peter remembered the word of the Lord,"},
+		{ "type": "custom", "format": "{#1}how He had said to him, Before the rooster" },
+		{ "type": "custom", "format": "{#1}crows, you will deny Me three times." },
+		{ "type": "custom", "format": "{#1}So Peter went out and wept bitterly.\"" },
 		{ "type": "custom", "format": "       (Luke 22:61-2)" },
 		{ "type": "break"},
 		{ "type": "separator" },

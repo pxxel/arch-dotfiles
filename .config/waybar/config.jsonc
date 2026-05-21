@@ -1,32 +1,97 @@
 // -*- mode: jsonc -*-
 {
 	"layer": "top",
+	"position": "top",
+	"height": 34,
+	"spacing": 8,
 
-	"modules-left": ["hyprland/workspaces", "hyprland/window"],
-	"modules-center": ["clock", "custom/uptime"],
-	"modules-right": ["network", "battery"],
-	"hyprland/window": {
-		"max-length": 50
-	},
-	"battery": {
-		"format": "{capacity}% {icon}",
-		"format-icons": [" ", "", " ", " ", " "],
-		"format-charging": "{capacity}% "
-	},
+	"modules-left": ["clock", "network", "bluetooth", "wireplumber#source"],
+	"modules-center": ["hyprland/workspaces"],
+	"modules-right": ["power-profiles-daemon", "custom/battery", "wireplumber", "custom/power"],
 	"clock": {
 		"timezone": "America/Los_Angeles",
-		"format": "{:%I:%M:%S %p}",
-		"format-alt": "{:%a, %b %d  %I:%M:%S %p}",
+		"format": "[ {:%a, %b %d  %I:%M:%S %p} ]",
 		"interval": 1
 	},
-	"custom/uptime": {
+	"custom/power": {
+		"format": "[ ⏻ ]",
+		"on-click": "wlogout"
+	},
+	"network": {
+		"format-wifi": "[ 󰤨 ]",
+		"format-disconnected": "[ 󰤮 ]"
+	},
+	"bluetooth": {
+		"format": "[ 󰂯 ]",
+		"format-disabled": "[ 󰂲 ]"
+	},
+	"wireplumber#source": {
+		"node-type": "Audio/Source",
+		"format": "[  ]",
+		"format-muted": "[  ]",
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+	},
+	"custom/music": {
+		"format": "{}",
+		"return-type": "json",
+		"exec": "waybar-module-music --marquee --title-width 15 --effect-speed 150 --play-icon '▶' --pause-icon '⏸'"
+	},
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"active-only": false,
+		"format": "<span font='13'>{icon}</span>",
+		"format-icons": {
+			"1": "一",
+			"2": "二",
+			"3": "三",
+			"4": "四",
+			"5": "五",
+			"6": "六",
+			"7": "七",
+			"8": "八",
+			"9": "九",
+			"0": "十",
+			"default": "{icon}",
+			"active": "<span font='14'>[ <span font='15'>󰄛</span> ]</span>"
+
+		},
+		"persistent-workspaces": {
+			"*": [1, 2, 3, 4, 5]
+		}
+	},
+	"power-profiles-daemon": {
+		"format": "{icon}",
+		"format-icons": {
+			"power-saver": "[ Power Saver ]",
+			"balanced": "[ Balanced ]",
+			"performance": "「 OVERDRIVE 」"
+		}
+	},
+	"custom/battery": {
+		"exec": "~/.local/bin/waybar-battery-animate.sh",
+		"return-type": "json",
+		"format": "{text}"
+	},
+	"wireplumber": {
+		"format": "{icon} {volume}%",
+        	"format-muted": "󰝟 [░░░░░░░░░] {volume}%",
+        	"format-icons": [
+           		"󰕿 [░░░░░░░░░]",
+            		"󰕿 [▓░░░░░░░░]",
+            		"󰕿 [▓▓░░░░░░░]",
+            		"󰖀 [▓▓▓░░░░░░]",
+            		"󰖀 [▓▓▓▓░░░░░]",
+            		"󰖀 [▓▓▓▓▓░░░░]",
+            		"󰖀 [▓▓▓▓▓▓░░░]",
+            		"󰕾 [▓▓▓▓▓▓▓░░]",
+            		"󰕾 [▓▓▓▓▓▓▓▓░]",
+            		"󰕾 [▓▓▓▓▓▓▓▓▓]"
+        	]
+	}
+/*	"custom/uptime": {
 		"exec": "uptime -p | sed 's/up //'",
 		"interval": 60,
 		"format": " Uptime: {}"
-	},
-	"network": {
-		"format-wifi": "{essid} ({signalStrength}%) ",
-		"format-disconnected": "Disconnected",
-		"format-alt": "{ifname}: {ipaddr}/{cidr}"
-	}
+	}*/
+
 }

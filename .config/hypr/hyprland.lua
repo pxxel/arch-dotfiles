@@ -49,6 +49,7 @@ local browser     = "brave"
    hl.exec_cmd("waybar")
    hl.exec_cmd("hyprpaper")
    hl.exec_cmd("hypridle")
+   hl.exec_cmd("blueman-applet")
  end)
 
 
@@ -97,8 +98,8 @@ hl.config({
         border_size = 1,
 
         col = {
-            active_border   = "#47f1ff",
-            inactive_border = "#000000",
+            active_border   = "#94bdf2",
+            inactive_border = "#101e69",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
