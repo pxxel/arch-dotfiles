@@ -2,15 +2,29 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Monospace, "JetBrains Mono Nerd Font Propo";
     font-weight: bold;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
+    background: transparent;
+}
+
+.modules-left, .modules-right {
+    background-color: rgba(7, 2, 19, 0.8);
+    color: #94bdf2;
+    margin-top: 9px;
+    margin-bottom: 9px; 
     transition-property: background-color;
     transition-duration: .5s;
+}
+
+.modules-center {
+    background-color: rgba(7, 2, 19, 0.8);
+    color: #94bdf2;
+    padding: 0px;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border: 2px solid #101e69;
 }
 
 window#waybar.hidden {
@@ -37,16 +51,15 @@ window#waybar.chromium {
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
-    border: none;
+    box-shadow: inherit;
+    border: inherit;
     border-radius: 0;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
 }
 
 /* you can set a style on hover for any module like this */
@@ -55,23 +68,30 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
     background-color: transparent;
-    color: #ffffff;
+    color: #94bdf2;
+    border: none;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+	text-shadow: inherit;
+	box-shadow: inherit;
 }
 
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
 }
 
 #workspaces button.focused, #workspaces button.active {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    color: #9beaf2;
+/*    box-shadow: 0 -3px #9beaf2 inset; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #9beaf2;*/
 }
 
 #mode {
@@ -79,8 +99,14 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
+#bluetooth {
+	color: #9594f2;
+}
+
 #clock,
-#battery,
+#bluetooth,
+#custom-battery,
+#custom-power,
 #cpu,
 #memory,
 #disk,
@@ -96,8 +122,9 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 3px;
-    color: #ffffff;
+	padding-left: 7px;
+	padding-right: 7px;
+	border: 2px solid #101e69;
 }
 
 #window,
@@ -116,17 +143,25 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
 }
 
-#battery {
-    background-color: #ffffff;
-    color: #000000;
+#custom-battery.critical {
+	color: #f53c3c;
+	border: 2px solid #f53c3c;
 }
-
-#battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+#custom-battery.low {
+	color: #f57a3c;
+	border: 2px solid #f57a3c;
+}
+#custom-battery.medium {
+	color: #b4ff6b;
+}
+#custom-battery.high {
+	color: #5affb9;
+}
+#custom-battery.charging {
+	color: #7afffc;
+	border: 2px solid #7afffc;
 }
 
 @keyframes blink {
@@ -137,33 +172,20 @@ button:hover {
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
 
 #power-profiles-daemon {
-    padding-right: 15px;
 }
 
 #power-profiles-daemon.performance {
-    background-color: #f53c3c;
-    color: #ffffff;
+    color: #f53c3c;
+    border: 2px dashed #f53c3c;
 }
 
 #power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
 }
 
 #power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
+    color: #5affb9;
 }
 
 label:focus {
@@ -188,11 +210,10 @@ label:focus {
 }
 
 #network {
-    background-color: #2980b9;
+ color: #94d8f2;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
 }
 
 #pulseaudio {
@@ -206,12 +227,12 @@ label:focus {
 }
 
 #wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
+	color: #bd94f2;
 }
 
 #wireplumber.muted {
-    background-color: #f53c3c;
+    color: #f53c3c;
+ /*   border: 2px solid #f53c3c; */
 }
 
 #custom-media {

@@ -2,8 +2,10 @@
 {
 	"layer": "top",
 	"position": "top",
-	"height": 34,
-	"spacing": 8,
+	"margin-top": 15,
+	"margin-left": 20,
+	"margin-right": 20,
+	"spacing": 10,
 
 	"modules-left": ["clock", "network", "bluetooth", "wireplumber#source"],
 	"modules-center": ["hyprland/workspaces"],
@@ -18,8 +20,16 @@
 		"on-click": "wlogout"
 	},
 	"network": {
-		"format-wifi": "[ 󰤨 ]",
-		"format-disconnected": "[ 󰤮 ]"
+		"format-wifi": "[ {icon} {essid} ]",
+		"format-icons": [
+			"󰤟",
+			"󰤢",
+			"󰤥",
+			"󰤨"
+		],
+		"format-disconnected": "󰤮",
+		"format-ethernet": "󰈀",
+		"format-disabled": "󰤭"
 	},
 	"bluetooth": {
 		"format": "[ 󰂯 ]",
@@ -86,7 +96,8 @@
             		"󰕾 [▓▓▓▓▓▓▓░░]",
             		"󰕾 [▓▓▓▓▓▓▓▓░]",
             		"󰕾 [▓▓▓▓▓▓▓▓▓]"
-        	]
+        	],
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 	}
 /*	"custom/uptime": {
 		"exec": "uptime -p | sed 's/up //'",

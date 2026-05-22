@@ -92,13 +92,19 @@ hl.config({
 	force_zero_scaling = true
     },
     general = {
-        gaps_in  = 5,
-        gaps_out = 20,
+        gaps_in  = 10,
+        gaps_out = {
+		top = 17,
+		right = 20,
+		left = 20,
+		bottom = 20
 
-        border_size = 1,
+	},
+
+        border_size = 2,
 
         col = {
-            active_border   = "#94bdf2",
+            active_border   = "#9beaf2",
             inactive_border = "#101e69",
         },
 

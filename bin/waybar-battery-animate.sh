@@ -26,18 +26,39 @@ while true; do
 			sleep 0.2
 		done
 	else
-		if [ $CAPACITY -le 10 ]; then ICON="󰁺 [░░░░░░░░░]";
-		elif [ $CAPACITY -le 20 ]; then ICON="󰁻 [▓░░░░░░░░]";
-		elif [ $CAPACITY -le 30 ]; then ICON="󰁼 [▓▓░░░░░░░]";
-		elif [ $CAPACITY -le 40 ]; then ICON="󰁽 [▓▓▓░░░░░░]";
-		elif [ $CAPACITY -le 50 ]; then ICON="󰁾 [▓▓▓▓░░░░░]";
-		elif [ $CAPACITY -le 60 ]; then ICON="󰁿 [▓▓▓▓▓░░░░]";
-		elif [ $CAPACITY -le 70 ]; then ICON="󰂀 [▓▓▓▓▓▓░░░]";
-		elif [ $CAPACITY -le 80 ]; then ICON="󰂁 [▓▓▓▓▓▓▓░░]";
-		elif [ $CAPACITY -le 90 ]; then ICON="󰂂 [▓▓▓▓▓▓▓▓░]";
-		else ICON="󰁹 [▓▓▓▓▓▓▓▓▓]"; fi
+		if [ $CAPACITY -le 10 ]; then 
+			ICON="󰁺 [░░░░░░░░░]"
+			CLASS="critical"
+		elif [ $CAPACITY -le 20 ]; then 
+			ICON="󰁻 [▓░░░░░░░░]"
+			CLASS="low"
+		elif [ $CAPACITY -le 30 ]; then 
+			ICON="󰁼 [▓▓░░░░░░░]"
+			CLASS="low"
+		elif [ $CAPACITY -le 40 ]; then 
+			ICON="󰁽 [▓▓▓░░░░░░]"
+			CLASS="medium"
+		elif [ $CAPACITY -le 50 ]; then 
+			ICON="󰁾 [▓▓▓▓░░░░░]"
+			CLASS="medium"
+		elif [ $CAPACITY -le 60 ]; then 
+			ICON="󰁿 [▓▓▓▓▓░░░░]"
+			CLASS="medium"
+		elif [ $CAPACITY -le 70 ]; then 
+			ICON="󰂀 [▓▓▓▓▓▓░░░]"
+			CLASS="medium"
+		elif [ $CAPACITY -le 80 ]; then 
+			ICON="󰂁 [▓▓▓▓▓▓▓░░]"
+			CLASS="high"
+		elif [ $CAPACITY -le 90 ]; then 
+			ICON="󰂂 [▓▓▓▓▓▓▓▓░]"
+			CLASS="high"
+		else 
+			ICON="󰁹 [▓▓▓▓▓▓▓▓▓]"
+		        CLASS="high"	
+		fi
 
-		echo "{\"text\": \"$ICON $CAPACITY%\", \"class\": \"discharging\"}"
+		echo "{\"text\": \"$ICON $CAPACITY%\", \"class\": \"$CLASS\"}"
 		sleep 10
 	fi
 done
