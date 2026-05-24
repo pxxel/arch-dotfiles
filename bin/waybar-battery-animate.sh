@@ -37,10 +37,10 @@ while true; do
 			CLASS="low"
 		elif [ $CAPACITY -le 40 ]; then 
 			ICON="󰁽 [▓▓▓░░░░░░]"
-			CLASS="medium"
+			CLASS="meh"
 		elif [ $CAPACITY -le 50 ]; then 
 			ICON="󰁾 [▓▓▓▓░░░░░]"
-			CLASS="medium"
+			CLASS="meh"
 		elif [ $CAPACITY -le 60 ]; then 
 			ICON="󰁿 [▓▓▓▓▓░░░░]"
 			CLASS="medium"
@@ -59,6 +59,6 @@ while true; do
 		fi
 
 		echo "{\"text\": \"$ICON $CAPACITY%\", \"class\": \"$CLASS\"}"
-		sleep 10
+		sleep 1
 	fi
 done

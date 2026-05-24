@@ -1,0 +1,11 @@
+font_size 8.0
+background_opacity 0.7
+
+foreground #cff4fb
+
+color0     #cff4fb
+background #070213
+
+cursor #9beaf2
+
+narrow_symbols U+E0A0-U+E0A3,U+E0C0-U+E0C7,U+EA60-U+EBEB,U+F000-U+F2E0 1

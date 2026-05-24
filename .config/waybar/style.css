@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Monospace, "JetBrains Mono Nerd Font Propo";
+    font-family: "Love LetterTW", "JetBrains Mono Nerd Font Propo";
     font-weight: bold;
     font-size: 12px;
 }
@@ -55,6 +55,7 @@ button {
     box-shadow: inherit;
     border: inherit;
     border-radius: 0;
+    
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -68,13 +69,28 @@ button:hover {
 }
 
 #workspaces button {
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 7px;
-    padding-right: 7px;
+    padding: 0px;
     background-color: transparent;
     color: #94bdf2;
     border: none;
+}
+#workspaces button.persistent.empty:not(.active):not(.visible) {
+	font-size: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    min-height: 0;
+    border: none;
+    background: transparent;
+    color: transparent;	
+}
+
+#workspaces button.persistent.empty:not(.active):not(.visible) label {
+    font-size: 0px;
+    min-width: 0px;
+    min-height: 0px;
+    color: transparent;
+    text-shadow: none;
 }
 
 #workspaces button:hover {
@@ -82,6 +98,8 @@ button:hover {
 	box-shadow: inherit;
 }
 
+#workspaces button:not(:last-child) {
+}
 
 #workspaces button.urgent {
 }
@@ -92,6 +110,8 @@ button:hover {
     padding-top: 10px;
     padding-bottom: 10px;
     border: 2px solid #9beaf2;*/
+	padding: 7px;
+	font-size: 15px;
 }
 
 #mode {
@@ -153,8 +173,13 @@ button:hover {
 	color: #f57a3c;
 	border: 2px solid #f57a3c;
 }
+
+#custom-battery.meh {
+	color: #f2d974
+
+}
 #custom-battery.medium {
-	color: #b4ff6b;
+	color: #5aff82;
 }
 #custom-battery.high {
 	color: #5affb9;

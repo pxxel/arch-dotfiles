@@ -4,8 +4,8 @@
 	"position": "top",
 	"margin-top": 15,
 	"margin-left": 20,
-	"margin-right": 20,
 	"spacing": 10,
+	"margin-right": 20,
 
 	"modules-left": ["clock", "network", "bluetooth", "wireplumber#source"],
 	"modules-center": ["hyprland/workspaces"],
@@ -48,25 +48,19 @@
 	},
 	"hyprland/workspaces": {
 		"disable-scroll": true,
-		"active-only": false,
-		"format": "<span font='13'>{icon}</span>",
+		"format": "<span font='13'>Layer:{icon}</span>",
+		"active-only": true,
 		"format-icons": {
-			"1": "一",
-			"2": "二",
-			"3": "三",
-			"4": "四",
-			"5": "五",
-			"6": "六",
-			"7": "七",
-			"8": "八",
-			"9": "九",
-			"0": "十",
-			"default": "{icon}",
-			"active": "<span font='14'>[ <span font='15'>󰄛</span> ]</span>"
-
-		},
-		"persistent-workspaces": {
-			"*": [1, 2, 3, 4, 5]
+			"1": "01",
+			"2": "02",
+			"3": "03",
+			"4": "04",
+			"5": "05",
+			"6": "06",
+			"7": "07",
+			"8": "08",
+			"9": "09",
+			"10": "10"
 		}
 	},
 	"power-profiles-daemon": {
